@@ -48,10 +48,4 @@ class RegisterController extends BaseController
 
       echo "Posted!";
     }
-
-    public function getShowLoginPage()
-    {
-        //echo $this->twig->render('login.html');
-        echo $this->blade->render("login");
-    }
 }
