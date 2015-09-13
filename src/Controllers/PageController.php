@@ -15,4 +15,8 @@ class PageController extends BaseController
         //echo $this->twig->render('about.html');
         echo $this->blade->render("about");
     }
+    public function getShowPage()
+    {
+        echo 'foo';
+    }
 }
