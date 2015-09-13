@@ -1,0 +1,9 @@
+.DS_Store
+composer.lock
+cache/
+vendor/
+.vagrant/
+.env
+install.sh
+resources/
+phinx.yml
