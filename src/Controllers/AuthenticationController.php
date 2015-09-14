@@ -10,12 +10,18 @@ class AuthenticationController extends BaseController
 {
     public function getShowLoginPage()
     {
-        //echo $this->twig->render('login.html');
-        echo $this->blade->render("login");
+        echo $this->blade->render("login", [
+              'signer' => $this->signer,
+          ]);
     }
 
     public function postShowLoginPage()
     {
+        if(!$this->signer->validateSignature($_POST['_token'])) {
+            header('HTTP/1.0 400 Bad Request');
+            exit;
+        }
+
         $okay = true;
         $activated = true;
         $email = $_REQUEST['email'];
@@ -59,7 +65,9 @@ class AuthenticationController extends BaseController
             // if not valid for whatever reason, redirect
             // to login page and display appropriate
             // error message
-            echo $this->blade->render('login');
+            echo $this->blade->render('login', [
+                  'signer' => $this->signer,
+              ]);
             unset($_SESSION['msg']);
             exit();
         }
