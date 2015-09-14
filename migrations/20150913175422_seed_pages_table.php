@@ -14,6 +14,6 @@ class SeedPagesTable extends AbstractMigration
   }
   public function down()
   {
-    
+
   }
 }
