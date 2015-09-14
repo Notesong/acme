@@ -7,3 +7,5 @@ vendor/
 install.sh
 resources/
 phinx.yml
+tests/
+phpunit.xml
