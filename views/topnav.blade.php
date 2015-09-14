@@ -14,10 +14,13 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="/">Home</a></li>
         <li><a href="/about-acme">About</a></li>
-        <li><a href="/register">Register</a></li>
+        <li><a href="/testimonials">Testimonials</a></li>
+        <li><a>|</a></li>
         @if (Acme\auth\LoggedIn::user())
+          <li><a href="/add-testimonial">Add a Testimonial</a></li>
           <li><a href="/logout">Logout</a></li>
         @else
+          <li><a href="/register">Register</a></li>
           <li><a href="/login">Login</a></li>
         @endif
       </ul>

@@ -4,7 +4,7 @@ namespace Acme\Controllers;
 use Acme\Models\User;
 use Acme\Validation\Validator;
 use duncan3dc\Laravel\BladeInstance;
-use Acme\Email\SendEmail;
+use Acme\email\SendEmail;
 use Acme\Models\UserPending;
 
 class RegisterController extends BaseController
