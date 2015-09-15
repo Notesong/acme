@@ -45,10 +45,12 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
     @if ((Acme\auth\LoggedIn::user()) && (Acme\auth\LoggedIn::user()->access_level == 20))
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/ckeditor/4.4.5/ckeditor.js"></script>
     @endif
 
     @yield('bottomjs')
+    @include('admin.admin-js')
 
 </body>
 

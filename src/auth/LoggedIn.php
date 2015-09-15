@@ -1,7 +1,7 @@
 <?php
 namespace Acme\Auth;
 
-use Acme\models\User;
+use Acme\Models\User;
 
 class LoggedIn
 {
