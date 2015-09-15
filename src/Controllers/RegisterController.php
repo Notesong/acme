@@ -41,7 +41,9 @@ class RegisterController extends BaseController
         if (sizeof($errors) > 0)
         {
           $_SESSION['msg'] = $errors;
-          echo $this->blade->render('register');
+          echo $this->blade->render("register", [
+                'signer' => $this->signer,
+          ]);
           unset($_SESSION['msg']);
           exit();
         }
@@ -61,8 +63,7 @@ class RegisterController extends BaseController
         $user_pending->save();
 
         $message = $this->blade->render('emails.welcome-email',
-            ['token' => $token],
-            ['signer' => $this->signer]
+            ['token' => $token]
         );
 
         SendEmail::sendEmail($user->email, "Welcome to Acme", $message);
