@@ -1,6 +1,6 @@
 <?php
 use Phinx\Migration\AbstractMigration;
-class SeedTestimonialTable extends AbstractMigration
+class SeedTestimonialsTable extends AbstractMigration
 {
     public function up()
     {
