@@ -10,7 +10,7 @@
 .page-upper-margin {
   margin-top:40px
 }
-.upper-margin-25 {
+.upper-margin-15 {
   margin-top: 15px;
 }
 
@@ -32,4 +32,16 @@ body {
   height: 170px;
   background-color: #333333;
   color: #CCCCCC;
+}
+
+/* admin styles
+-------------------------------------------------- */
+.admin-hidden {
+    display: none;
+}
+.admin-display {
+    display:inline-block;
+}
+.outlined {
+    border: 1px solid red;
 }

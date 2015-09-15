@@ -19,18 +19,20 @@
       <ul>
         <ul class="nav navbar-nav navbar-right">
           @if (Acme\auth\LoggedIn::user())
-            <li><a href="/add-testimonial">Add a Testimonial</a></li>
-            <li class="dropdown">
-              <a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                Admin
-                <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu" aria-labeledby="drop1">
-                <li><a href="">Edit Page</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="">Placeholder</a></li>
-              </ul>
-            </li>
+            <li><a href="/add-testimonial"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Add a Testimonial</a></li>
+            @if ((Acme\auth\LoggedIn::user()) && (Acme\auth\LoggedIn::user()->access_level == 20))
+              <li class="dropdown">
+                <a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  Admin
+                  <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" aria-labeledby="drop1">
+                  <li><a class="menu-item" href="#" onclick="makePageEditable(this)">Edit Page</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="">Placeholder</a></li>
+                </ul>
+              </li>
+            @endif
             <li>
               <a href="/logout"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> Logout</a>
             </li>
