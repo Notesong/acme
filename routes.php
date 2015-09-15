@@ -27,5 +27,4 @@ if ((Acme\auth\LoggedIn::user()) && (Acme\auth\LoggedIn::user()->access_level ==
 
 // page routes
 $router->map('GET', '/', 'Acme\Controllers\PageController@getShowHomePage', 'home');
-$router->map('GET', '/page-not-found', 'Acme\Controllers\PageController@getShow404', '404');
 $router->map('GET', '/[*]', 'Acme\Controllers\PageController@getShowPage', 'generic_page');
