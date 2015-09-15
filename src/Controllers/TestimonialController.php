@@ -19,11 +19,18 @@ class TestimonialController extends BaseController
 
     public function getShowAdd()
     {
-        echo $this->blade->render('add-testimonial');
+        echo $this->blade->render('add-testimonial', [
+              'signer' => $this->signer,
+          ]);
     }
 
     public function postShowAdd()
     {
+        if(!$this->signer->validateSignature($_POST['_token'])) {
+            header('HTTP/1.0 400 Bad Request');
+            exit;
+        }
+
         $validation_data = [
           'title' => 'min:3|max:30',
           'testimonial' => 'min:10|max:5000',
@@ -40,7 +47,9 @@ class TestimonialController extends BaseController
         if (sizeof($errors) > 0)
         {
           $_SESSION['msg'] = $errors;
-          echo $this->blade->render('add-testimonial');
+          echo $this->blade->render('add-testimonial', [
+                'signer' => $this->signer,
+            ]);
           unset($_SESSION['msg']);
           exit();
         }

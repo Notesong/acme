@@ -11,12 +11,18 @@ class RegisterController extends BaseController
 {
     public function getShowRegisterPage()
     {
-        //echo $this->twig->render('register.html');
-        echo $this->blade->render("register");
+        echo $this->blade->render("register", [
+              'signer' => $this->signer,
+          ]);
     }
 
     public function postShowRegisterPage()
     {
+        if(!$this->signer->validateSignature($_POST['_token'])) {
+            header('HTTP/1.0 400 Bad Request');
+            exit;
+        }
+
         $validation_data = [
           'first_name' => 'min:2|max:20',
           'last_name' => 'min:2|max:30',
@@ -55,7 +61,8 @@ class RegisterController extends BaseController
         $user_pending->save();
 
         $message = $this->blade->render('emails.welcome-email',
-            ['token' => $token]
+            ['token' => $token],
+            ['signer' => $this->signer]
         );
 
         SendEmail::sendEmail($user->email, "Welcome to Acme", $message);

@@ -1,11 +1,4 @@
-html {
-  position: relative;
-  min-height: 100%;
-}
-body {
-  margin-bottom: 200px;
-}
-  .empty-well {
+.empty-well {
   background: transparent;
 }
 .bigger-icn {
@@ -17,23 +10,38 @@ body {
 .page-upper-margin {
   margin-top:40px
 }
-.padding-25 {
-  padding: 25px;
+.upper-margin-15 {
+  margin-top: 15px;
 }
 
-/* Footer CSS */
-#footer {
-  margin: 0;
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 170px;
+}
+.footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 200px;
-  background-color: darkgray;
-  color: black;
+  /* Set the fixed height of the footer here */
+  height: 170px;
+  background-color: #333333;
+  color: #CCCCCC;
 }
-#footer li {
-  list-style-type: none;
+
+/* admin styles
+-------------------------------------------------- */
+.admin-hidden {
+    display: none;
 }
-#footer a {
-  color: #333333;
+.admin-display {
+    display:inline-block;
+}
+.outlined {
+    border: 1px solid red;
 }
