@@ -20,6 +20,11 @@ $router->map('GET', '/login', 'Acme\Controllers\AuthenticationController@getShow
 $router->map('POST', '/login', 'Acme\Controllers\AuthenticationController@postShowLoginPage', 'login_post');
 $router->map('GET', '/logout', 'Acme\Controllers\AuthenticationController@getLogout', 'logout');
 
+if ((Acme\auth\LoggedIn::user()) && (Acme\auth\LoggedIn::user()->access_level == 20)) {
+    $router->map('POST', '/admin/page/edit', 'Acme\Controllers\AdminController@postSavePage', 'save_pages');
+    $router->map('GET', '/admin/page/add', 'Acme\Controllers\AdminController@getAddPage', 'add_pages');
+}
+
 // page routes
 $router->map('GET', '/', 'Acme\Controllers\PageController@getShowHomePage', 'home');
 $router->map('GET', '/page-not-found', 'Acme\Controllers\PageController@getShow404', '404');

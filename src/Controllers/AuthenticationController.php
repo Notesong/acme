@@ -8,6 +8,11 @@ use Acme\Auth\LoggedIn;
 
 class AuthenticationController extends BaseController
 {
+
+    /**
+     * Shows the login page
+     * @return html
+     */
     public function getShowLoginPage()
     {
         echo $this->blade->render("login", [

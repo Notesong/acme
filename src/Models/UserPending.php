@@ -1,5 +1,5 @@
 <?php
-namespace Acme\models;
+namespace Acme\Models;
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
 
