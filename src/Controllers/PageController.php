@@ -8,7 +8,6 @@ class PageController extends BaseController
 {
     public function getShowHomePage()
     {
-        //echo $this->twig->render('home.html');
         echo $this->blade->render("home");
     }
     public function getShowPage()
