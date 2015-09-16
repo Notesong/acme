@@ -1,9 +1,7 @@
 <?php
 namespace Acme\Controllers;
 
-use duncan3dc\Laravel\BladeInstance;
 use Acme\Models\Page;
-use Acme\Validation\Validator;
 use Cocur\Slugify\Slugify;
 
 class AdminController extends BaseController

@@ -1,24 +1,16 @@
 <?php
 namespace Acme\Controllers;
 
-use duncan3dc\Laravel\BladeInstance;
 use Acme\Models\Page;
 
 class PageController extends BaseController
 {
 
-    /**
-     * Show the home page
-     * @return html
-     */
     public function getShowHomePage()
     {
         echo $this->blade->render("home");
     }
-    /**
-     * Show a generic page from db
-     * @return html
-     */
+
     public function getShowPage()
     {
         $browser_title = "";

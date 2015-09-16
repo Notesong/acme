@@ -1,7 +1,6 @@
 <?php
 namespace Acme\Controllers;
 
-use duncan3dc\Larave\BladeInstance;
 use Acme\Models\Testimonial;
 use Acme\Validation\Validator;
 use Acme\Auth\LoggedIn;

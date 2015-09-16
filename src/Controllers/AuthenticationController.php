@@ -2,17 +2,9 @@
 namespace Acme\Controllers;
 
 use Acme\Models\User;
-use Acme\Validation\Validator;
-use duncan3dc\Laravel\BladeInstance;
-use Acme\Auth\LoggedIn;
 
 class AuthenticationController extends BaseController
 {
-
-    /**
-     * Shows the login page
-     * @return html
-     */
     public function getShowLoginPage()
     {
         echo $this->blade->render("login", [
