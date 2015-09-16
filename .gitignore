@@ -9,3 +9,4 @@ resources/
 phinx.yml
 tests/
 phpunit.xml
+.idea/
